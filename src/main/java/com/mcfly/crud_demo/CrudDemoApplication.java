@@ -22,8 +22,8 @@ public class CrudDemoApplication {
 		return runner -> {
 //			createStudent(studentDAO);
 //			createMultipleStudents(studentDAO);
-			readStudent(studentDAO);
-//			queryForStudents(studentDAO);
+//			readStudent(studentDAO);
+			queryForStudents(studentDAO);
 //			queryForStudentsByLastName(studentDAO);
 //			updateStudent(studentDAO);
 //			deleteStudent(studentDAO);
