@@ -22,10 +22,12 @@ public class CrudDemoApplication {
 		return runner -> {
 //			createStudent(studentDAO);
 //			createMultipleStudents(studentDAO);
-//			readStudent(studentDAO);
+			readStudent(studentDAO);
 //			queryForStudents(studentDAO);
 //			queryForStudentsByLastName(studentDAO);
-			updateStudent(studentDAO);
+//			updateStudent(studentDAO);
+//			deleteStudent(studentDAO);
+//			deleteAllStudents(studentDAO);
 		};
 	}
 
@@ -80,5 +82,18 @@ public class CrudDemoApplication {
 		studentDAO.update(student);
 		final Student updatedStudent = studentDAO.findById(1);
 		System.out.println("Updated student first name: " + updatedStudent.getFirstName());
+	}
+
+	private void deleteStudent(StudentDAO studentDAO) {
+		final Student student = new Student("Sam", "Doe", "sam@mcfly.com");
+		studentDAO.save(student);
+		final int id = student.getId();
+		System.out.println("Deleting the student with id: " + id);
+		studentDAO.delete(id);
+	}
+
+	private void deleteAllStudents(StudentDAO studentDAO) {
+		final int deletedCount = studentDAO.deleteAll();
+		System.out.println("Deleted students count: " + deletedCount);
 	}
 }
