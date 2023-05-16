@@ -20,11 +20,11 @@ public class CrudDemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-//			createStudent(studentDAO);
-//			createMultipleStudents(studentDAO);
-//			readStudent(studentDAO);
+			createStudent(studentDAO);
+			createMultipleStudents(studentDAO);
+			readStudent(studentDAO);
 			queryForStudents(studentDAO);
-//			queryForStudentsByLastName(studentDAO);
+			queryForStudentsByLastName(studentDAO);
 //			updateStudent(studentDAO);
 //			deleteStudent(studentDAO);
 //			deleteAllStudents(studentDAO);
